@@ -1,9 +1,53 @@
 import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoaderInterceptorService {
+export class LoaderInterceptorService implements HttpInterceptor {
 
-  constructor() { }
+  private pendingRequests = 0;
+  private showLoading = false;
+
+  constructor(private loadingBar: SlimLoadingBarService) {
+  }
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    this.pendingRequests++;
+    this.showLoadingBar();
+    return next.handle(req).pipe(
+      tap(
+        (event: HttpEvent<any>) => {
+          if (event instanceof HttpResponse) {
+            this.hideLoadingBar();
+          }
+        },
+        () => {
+          Observable.throw('error');
+          this.hideLoadingBar();
+        },
+        () => {
+          this.hideLoadingBar();
+        })
+    );
+  }
+
+  private showLoadingBar() {
+    if (!this.showLoading) {
+      this.loadingBar.start();
+      this.showLoading = true;
+    }
+  }
+
+  private hideLoadingBar() {
+    this.pendingRequests--;
+    if (this.pendingRequests <= 0) {
+      this.loadingBar.complete();
+      this.showLoading = false;
+      this.pendingRequests = 0;
+    }
+  }
 }
