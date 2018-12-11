@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ToastyService, ToastyConfig, ToastOptions, ToastData } from 'ng2-toasty';
+import { ToastaService, ToastaConfig, ToastOptions, ToastData } from 'ngx-toasta';
 @Injectable({
   providedIn: 'root'
 })
 export class ToastService {
   private indexWarning: number;
-  constructor(private toastyService: ToastyService, private toastyConfig: ToastyConfig) {
+  constructor(private toastyService: ToastaService, private toastyConfig: ToastaConfig) {
     // Possible values: default, bootstrap, material
     this.toastyConfig.theme = 'default';
   }

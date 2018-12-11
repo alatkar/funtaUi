@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpService } from '..';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 export class AppConfigBootstrapService {
   private config: AppConfig;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpService) { }
 
   loadClientConfig(): Promise<any> {
     return this.http.get<AppConfig>('assets/json/api-config.json')

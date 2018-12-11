@@ -1,8 +1,8 @@
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar-observables';
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 
 @Injectable({
   providedIn: 'root'

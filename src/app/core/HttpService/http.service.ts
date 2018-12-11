@@ -32,32 +32,27 @@ export class HttpService {
       );
   }
 
-  public FileManagerExec(url: string, mode: string, path: string, body: any, name?: string, version: any = '2.0'): Observable<any> {
-    let fullUrl: string = this.baseUrl.configuration.host + url;
+  public put(body: Icredentials): Observable<any> {
+    let fullUrl: string = this.baseUrl.configuration.authUrl;
 
-    let param = new HttpParams()
-      .set('name', name)
-      .set('mode', mode)
-      .set('path', path);
-
-    let formData: FormData = new FormData();
-    formData.append('', body);
+    let frmdata = new URLSearchParams();
+    frmdata.append('username', body.username);
+    frmdata.append('client_id', this.baseUrl.configuration.clientid);
+    frmdata.append('grant_type', 'password');
+    frmdata.append('password', body.password);
 
     let header: HttpHeaders = new HttpHeaders({
-      'api-version': version
+      'Accept': '*/*',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     });
-
-    return this.http.post(fullUrl, formData, {
-      headers: header,
-      params: param,
-    })
+    return this.http.post(fullUrl, frmdata.toString(), { headers: header })
       .pipe(
         retry(3),
-        catchError(this.handleError));
+        catchError(this.handleError)
+      );
   }
 
-
-  public postLogin(body: Icredentials): Observable<any> {
+  public delete(body: Icredentials): Observable<any> {
     let fullUrl: string = this.baseUrl.configuration.authUrl;
 
     let frmdata = new URLSearchParams();
