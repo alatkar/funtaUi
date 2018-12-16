@@ -78,25 +78,6 @@ export class AuthService {
     return !value || 0 === value.length;
   }
 
-  public login(credentials: Icredentials): Observable<boolean> {
-    return this.http
-      .postLogin(credentials)
-      // TODO: check this pipe()
-      .pipe(
-        map((response: any) => {
-          this.browserStorageService.setLocal(this.rememberMeToken, credentials.rememberMe);
-          if (!response) {
-            this.authStatusSource.next(false);
-            return false;
-          }
-          this.setLoginSession(response);
-          this.authStatusSource.next(true);
-          return true;
-        }),
-        catchError((error: HttpErrorResponse) => throwError(error))
-      );
-  }
-
   public logout(navigationToHome: boolean): void {
     this.deleteAuthTokens();
     this.authStatusSource.next(false);

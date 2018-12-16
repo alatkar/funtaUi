@@ -1,0 +1,27 @@
+@import "../../../variable.scss";
+
+.no-padding-form:first-child{
+  padding-left: 0;
+}
+.no-padding-form:last-child	{
+  padding-right: 0;
+}
+
+#container-cap{
+  width: 43%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30%;
+  position: relative;
+  list-style: none;
+    li{
+      margin: 0 10px;
+    &:nth-child(odd){
+      margin-top: 22px;
+    }
+ }
+}
+p{
+  font-family: $font-fantasy;
+}

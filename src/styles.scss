@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/dist/css/bootstrap-theme.min.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "variable.scss";
+
+
+@font-face {
+  font-family: 'gabriela';
+  src: url(assets/fonts/qkBWXvsO6sreR8E-b8m5xLs.woff2)
+  format('woff2');
+}
+
+button[type="submit"]{
+  background-color: $main-color;
+    color: #fff;
+    border: none;
+    outline: none;
+    background-image: none;
+    font-family: $font-btn;
+    &:hover{
+      background-color: $main-color-darker;
+      color: #fff;
+      outline: none;
+    }
+}
+
+.navbar-brand{
+  font-family: $font-fantasy;
+}
+
+h1{
+  color:$main-color;
+  font-family: $font-fantasy;
+}

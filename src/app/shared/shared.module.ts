@@ -1,12 +1,18 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { InputComponent } from './HtmlTags/input/input.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [NavbarComponent, SidebarComponent, InputComponent],
   imports: [
     CommonModule
   ],
-  exports: [],
+  exports: [
+    NavbarComponent,
+    SidebarComponent
+  ],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
