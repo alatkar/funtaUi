@@ -51,6 +51,10 @@ ul#container-action-link {
     }
     &:last-child {
       border-right: none;
+      vertical-align: top;
+    }
+    &#notification-wrapper {
+      min-width: 150px;
     }
   }
 }

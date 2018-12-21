@@ -1,0 +1,36 @@
+<div id="notification">
+  <ul id="container-notification">
+    <li>
+      <span class="badge">6</span>
+      <i (click)="showLikes()" class="glyphicon glyphicon-heart"></i>
+    </li>
+    <li>
+      <span class="badge">5</span>
+      <i (click)="showComment()" class="glyphicon glyphicon-comment"></i>
+    </li>
+    <li>
+      <span class="badge">12</span>
+      <i (click)="showFriends()" class="glyphicon glyphicon-user"></i>
+    </li>
+  </ul>
+</div>
+<div id="container-show-notification">
+  <div class="wrapper-show-notification">
+    <div id="container-logo">
+      <i class="glyphicon glyphicon-heart"></i>
+      <i id="count-notification">12</i>
+    </div>
+    <ul id="container-text-notification">
+      <ng-template ngFor let-contact [ngForOf]="[1,2,3,4,5]">
+        <li>
+          <div class="pull-left container-img">
+            <img class="img-circle" src="../../../assets/img/avatar.png" alt="">
+          </div>
+          <div class="container-txt">
+            <p><b>Bill Gates</b> Requested join with you</p>
+          </div>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</div>

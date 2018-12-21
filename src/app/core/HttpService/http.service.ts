@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { AppConfigBootstrapService } from '@app/core';
-import { Icredentials } from '@app/authentication/icredentials';
+import { Icredentials } from '@app/pages/login/icredentials';
 @Injectable({
   providedIn: 'root'
 })
