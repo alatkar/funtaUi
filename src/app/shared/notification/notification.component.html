@@ -14,23 +14,54 @@
     </li>
   </ul>
 </div>
-<div id="container-show-notification">
-  <div class="wrapper-show-notification">
+<div id="container-show-notification" (click)="CloseModal()" *ngIf="ShowModal">
+  <div class="wrapper-show-notification"
+    (@slideInOut.done)="animationDone($event)"
+    (@slideInOut.start)="animationStarted($event)"
+    [@slideInOut]="currentState">
     <div id="container-logo">
-      <i class="glyphicon glyphicon-heart"></i>
+      <i [ngClass]="['glyphicon', icon]"></i>
       <i id="count-notification">12</i>
     </div>
     <ul id="container-text-notification">
       <ng-template ngFor let-contact [ngForOf]="[1,2,3,4,5]">
-        <li>
-          <div class="pull-left container-img">
-            <img class="img-circle" src="../../../assets/img/avatar.png" alt="">
-          </div>
-          <div class="container-txt">
-            <p><b>Bill Gates</b> Requested join with you</p>
-          </div>
-        </li>
+        <ng-container *ngTemplateOutlet="friend">
+
+        </ng-container>
       </ng-template>
     </ul>
   </div>
 </div>
+
+<ng-template #friend>
+  <li>
+    <div class="pull-left container-img">
+      <img class="img-circle" src="../../../assets/img/avatar.png" alt="">
+    </div>
+    <div class="container-txt">
+      <p><b>Bill Gates</b> Requested join with you</p>
+    </div>
+  </li>
+</ng-template>
+
+<ng-template #comment>
+  <li>
+    <div class="pull-left container-img">
+      <img class="img-circle" src="../../../assets/img/avatar.png" alt="">
+    </div>
+    <div class="container-txt">
+      <p><b>Bill Gates</b> Requested join with you</p>
+    </div>
+  </li>
+</ng-template>
+
+<ng-template #notification>
+  <li>
+    <div class="pull-left container-img">
+      <img class="img-circle" src="../../../assets/img/avatar.png" alt="">
+    </div>
+    <div class="container-txt">
+      <p><b>Bill Gates</b> notification join with you</p>
+    </div>
+  </li>
+</ng-template>
