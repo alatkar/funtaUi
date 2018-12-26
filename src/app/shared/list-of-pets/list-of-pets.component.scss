@@ -6,9 +6,31 @@
 .list::first-line {
   color: rgba(255, 255, 255, 0.5);
 }
-.list > li,
-h5 {
+.list > li {
   padding: 5px 0px 5px 40px;
+  padding: 5px 0px 5px 40px;
+  background: #b5b3b357;
+  margin: 5px 0;
+  & > div {
+    overflow: auto;
+    & > div {
+      width: 62px;
+      float: right;
+      margin-right: 13px;
+      .img-rounded {
+        border-radius: 50%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    p {
+      display: inline-block;
+      margin: 0;
+      line-height: 3;
+    }
+  }
 }
 .list > li:hover {
   background-color: rgba(255, 255, 255, 0.2);
