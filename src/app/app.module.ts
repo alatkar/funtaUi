@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    SharedModule,
+    SharedModule.forRoot(),
     PagesModule,
     AppRoutingModule
   ],

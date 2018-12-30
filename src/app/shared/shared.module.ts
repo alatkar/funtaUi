@@ -6,6 +6,12 @@ import { InputComponent } from './HtmlTags/input/input.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ListOfPetsComponent } from './list-of-pets/list-of-pets.component';
 import { ListOfFriendComponent } from './list-of-friend/list-of-friend.component';
+import { PostComponent } from './post/post.component';
+import { HeaderPostComponent } from './header-post/header-post.component';
+import { FooterPostComponent } from './footer-post/footer-post.component';
+import { CommentComponent } from './comment/comment.component';
+import { LikeComponent } from './like/like.component';
+import { ShareComponent } from './share/share.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +20,13 @@ import { ListOfFriendComponent } from './list-of-friend/list-of-friend.component
     InputComponent,
     NotificationComponent,
     ListOfPetsComponent,
-    ListOfFriendComponent
+    ListOfFriendComponent,
+    PostComponent,
+    HeaderPostComponent,
+    FooterPostComponent,
+    CommentComponent,
+    LikeComponent,
+    ShareComponent
   ],
   imports: [
     CommonModule
@@ -23,7 +35,8 @@ import { ListOfFriendComponent } from './list-of-friend/list-of-friend.component
     NavbarComponent,
     SidebarComponent,
     ListOfPetsComponent,
-    ListOfFriendComponent
+    ListOfFriendComponent,
+    PostComponent
   ],
 })
 export class SharedModule {
