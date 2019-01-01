@@ -12,6 +12,7 @@ import { FooterPostComponent } from './footer-post/footer-post.component';
 import { CommentComponent } from './comment/comment.component';
 import { LikeComponent } from './like/like.component';
 import { ShareComponent } from './share/share.component';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ShareComponent } from './share/share.component';
     FooterPostComponent,
     CommentComponent,
     LikeComponent,
-    ShareComponent
+    ShareComponent,
+    EventComponent
   ],
   imports: [
     CommonModule
@@ -36,7 +38,8 @@ import { ShareComponent } from './share/share.component';
     SidebarComponent,
     ListOfPetsComponent,
     ListOfFriendComponent,
-    PostComponent
+    PostComponent,
+    EventComponent
   ],
 })
 export class SharedModule {
