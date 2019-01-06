@@ -13,6 +13,7 @@ import { CommentComponent } from './comment/comment.component';
 import { LikeComponent } from './like/like.component';
 import { ShareComponent } from './share/share.component';
 import { EventComponent } from './event/event.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EventComponent } from './event/event.component';
     CommentComponent,
     LikeComponent,
     ShareComponent,
-    EventComponent
+    EventComponent,
+    FormComponent
   ],
   imports: [
     CommonModule
@@ -39,7 +41,8 @@ import { EventComponent } from './event/event.component';
     ListOfPetsComponent,
     ListOfFriendComponent,
     PostComponent,
-    EventComponent
+    EventComponent,
+    FormComponent
   ],
 })
 export class SharedModule {

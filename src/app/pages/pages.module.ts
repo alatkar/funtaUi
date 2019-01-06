@@ -6,13 +6,15 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterModule } from './register/register.module';
 
 @NgModule({
   declarations: [PageNotFoundComponent, HomeComponent, LoginComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    SharedModule
+    SharedModule,
+    RegisterModule
   ]
 })
 export class PagesModule { }

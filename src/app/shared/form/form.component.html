@@ -1,0 +1,82 @@
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <form autocomplete="off" class="contact100-form validate-form">
+      <span class="contact100-form-title" [textContent]="titleForm">
+
+      </span>
+      <ng-template [ngForTrackBy]="trackByFn" ngFor let-row [ngForOf]="rows" let-i="index">
+        <ng-container *ngTemplateOutlet="SelectTemplate(row);context:{ $implicit:row}">
+        </ng-container>
+      </ng-template>
+      <div class="container-contact100-form-btn">
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button  type="submit" class="contact100-form-btn">
+              Submit
+            </button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+<ng-template #text let-default>
+  <div class="wrap-input100 validate-input" data-validate="Name is required">
+    <input class="input100" [attr.name]="default.name" [attr.id]="default.name" type="text" [placeholder]="default.placeHolder">
+    <label class="label-input100" [for]="default.name">
+        <span [ngClass]="default.icon"></span>
+    </label>
+  </div>
+</ng-template>
+<ng-template #email let-default>
+  <div class="wrap-input100 validate-input" data-validate="Name is required">
+    <input class="input100" [attr.name]="default.name" [attr.id]="default.name" type="email" [placeholder]="default.placeHolder">
+    <label class="label-input100" [for]="default.name">
+      <span [ngClass]="default.icon"></span>
+    </label>
+  </div>
+</ng-template>
+<ng-template #number let-default>
+  <div class="wrap-input100 validate-input" data-validate="Name is required">
+    <input class="input100" [attr.name]="default.name" [attr.id]="default.name" type="number" [placeholder]="default.placeHolder">
+    <label class="label-input100" [for]="default.name">
+      <span [ngClass]="default.icon"></span>
+    </label>
+  </div>
+</ng-template>
+<ng-template #password let-default>
+  <div class="wrap-input100 validate-input" data-validate="Name is required">
+    <input class="input100" [attr.name]="default.name" [attr.id]="default.name" type="password" [placeholder]="default.placeHolder">
+    <label class="label-input100" [for]="default.name">
+      <span [ngClass]="default.icon"></span>
+    </label>
+  </div>
+</ng-template>
+<ng-template #radio let-default>
+  <!-- <div class="wrap-input100 validate-input" data-validate="Name is required">
+    <input class="input100" [attr.name]="default.name" [attr.id]="default.name" type="radio" [placeholder]="default.placeHolder">
+    <label class="label-input100" [for]="default.name">
+      <span [ngClass]="default.icon"></span>
+    </label>
+  </div> -->
+</ng-template>
+<ng-template #checkbox let-default>
+    <div class="contact100-form-checkbox">
+        <input class="input-checkbox100"  [attr.id]="default.name" type="checkbox" [attr.name]="default.name">
+        <label class="label-checkbox100" [for]="default.name" [textContent]="default.placeHolder">
+
+        </label>
+      </div>
+</ng-template>
+<ng-template #file let-default>
+  <!-- <div class="form-group">
+    <label [for]="default.name">File input</label>
+    <input type="file" [attr.name]="default.name" [attr.id]="default.name">
+    <p class="help-block" [textContent]="default.placeHolder"></p>
+  </div> -->
+</ng-template>
+<ng-template #textarea let-default>
+    <div class="wrap-input100 validate-input" data-validate="Message is required">
+        <textarea class="input100" [attr.name]="default.name" [placeholder]="default.placeHolder"></textarea>
+      </div>
+</ng-template>
