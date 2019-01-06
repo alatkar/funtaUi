@@ -15,7 +15,7 @@ export class PetsComponent implements OnInit {
         title: 'petsText',
         type: InputType.text,
         placeHolder: 'testtt',
-        icon: 'glyphicon glyphicon-user'
+        icon: 'lnr lnr-user'
       },
       {
         name: 'nameOfDgoscheckbox',
@@ -28,7 +28,7 @@ export class PetsComponent implements OnInit {
         title: 'petsemail',
         type: InputType.email,
         placeHolder: 'testtt',
-        icon: 'glyphicon glyphicon-envelope'
+        icon: 'lnr lnr-envelope'
       },
       {
         name: 'nameOfDgosfile',
@@ -40,13 +40,15 @@ export class PetsComponent implements OnInit {
         name: 'nameOfDgosnumber',
         title: 'petsnumber',
         type: InputType.number,
-        placeHolder: 'testtt'
+        placeHolder: 'testtt',
+        icon: 'lnr lnr-envelope'
       },
       {
         name: 'nameOfDgospassword',
         title: 'petspassword',
         type: InputType.password,
-        placeHolder: 'testtt'
+        placeHolder: 'testtt',
+        icon: 'lnr lnr-phone-handset'
       },
       {
         name: 'nameOfDgosradio',

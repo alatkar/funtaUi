@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css",
               "src/styles.scss"
             ],
             "scripts": [
