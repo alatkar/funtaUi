@@ -1,7 +1,14 @@
-.sidebar1 {
+#container-sidebar {
+  padding: 0;
+  height: 100vh;
+  position: relative;
+}
+.sidebar {
   padding: 0px;
   min-height: 100%;
-  .left-navigation{
+  position: fixed;
+  width: inherit;
+  .left-navigation {
     margin-top: -5px;
     position: relative;
     height: 100%;
