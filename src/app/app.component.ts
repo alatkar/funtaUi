@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public isLogin: boolean = false;
   title = 'ui';
+  constructor() {
+    this.isLogin = window.location.pathname.includes('login');
+  }
 }
